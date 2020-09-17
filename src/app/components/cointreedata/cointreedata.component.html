@@ -1,0 +1,12 @@
+<div>
+    <div class="form-group" *ngIf="service.currentData != null">
+        <label>Current :</label> {{ service.currentData.bid }}
+    </div>
+    <div class="form-group" *ngIf="service.prevPrice != null">
+        <label>Previous :</label> {{ service.prevPrice }}
+    </div>
+    <div class="form-group" *ngIf="service.currentData != null && service.prevPrice != null">
+        <label>Percent :</label>        
+       ( {{ ((service.currentData.bid - service.prevPrice) / service.currentData.bid) | percent : '2.2-5' }} )
+    </div>
+</div>   
